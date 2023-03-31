@@ -1,0 +1,89 @@
+<nav class="navbar  navbar-expand-lg  ">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="##">
+      <img class="logo" src="public/images/logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#services">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact us</a>
+        </li>
+        {{!-- <li class="nav-item">
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">Register</button>
+        </li> --}}
+         {{!-- <li class="nav-item">
+          <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop">{{name}}</button>
+        </li> --}}
+        {{#if Inlogged}}
+        <li class="nav-item dropdown">
+          <a href="#" class="mb-1 nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="public/images/user.png" class="user_icon" alt="profile icon">
+            {{username}}
+
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a href="" class="dropdown-item">logout</a></li>
+          </ul>
+        </li>
+        {{else}}
+        <button class="btn btn-outline-primary ms-2" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</button>
+      </ul>
+      {{/if}}
+    </div>
+  </div>
+</nav>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Register</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/register" method="post">
+          
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">username</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="username" name="name">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+          </div>
+       
+           <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">confirm password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="cpassword">
+          </div>
+       
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+      <div class="text-center">
+        <p class="text-center">Already Have an Account?<a href="">click here</a></p>
+      </div>
+    </div>
+  </div>
+</div>
